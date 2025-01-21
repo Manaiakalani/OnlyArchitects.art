@@ -1,78 +1,115 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Global body font */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  font-family: 'Doto', Arial, sans-serif;
+  margin: 0;
+  background-color: #f7f5f2;
 }
 
-/* Transparent header with updated navigation link styles */
+/* Header styles */
 header {
-    background: transparent;
-    color: black; /* Updated text color to black */
-    padding: 1rem 0;
+  background-color: #e0e0e0;
+  padding: 20px;
+  position: fixed; 
+  width: 100%;
+  z-index: 100; 
 }
 
-header nav ul {
-    list-style: none;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+.logo {
+  font-family: 'Doto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
+.list-inline-item .btn {
+  font-family: 'Doto', sans-serif;
+  font-weight: 400;
 }
 
-header nav ul li a {
-    color: black; /* Updated text color to black */
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+/* Left section */
+.left-section {
+  padding: 40px;
 }
 
-header nav ul li a:hover {
-    background: rgba(0,0,0,0.1); /* Subtle gray background on hover for better visibility */
+.left-section h2 {
+  font-family: 'Doto', sans-serif;
+  font-weight: 700;
+  color: #333;
 }
 
-.parallax-container {
-    position: relative;
-    height: 400px;
-    overflow: hidden;
+.left-section p {
+  font-family: 'Doto', sans-serif;
+  line-height: 1.6;
+  color: #555;
 }
 
+/* Right parallax image */
+.right-parallax {
+  background-image: url("https://images.unsplash.com/photo-1448836990373-efa7c2fba22f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); /* Aesthetic placeholder image */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+/* Parallax section */
 .parallax {
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
+  background-image: url("https://images.unsplash.com/photo-1737069222401-afd3720775ae?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+  min-height: 400px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section {
-    position: relative;
-    z-index: 1;
-    padding: 100px 20px;
-    text-align: center;
+.parallax-content {
+  text-align: center;
+  color: white;
 }
 
-.content {
-    padding: 20px;
-    text-align: center;
+.parallax-content h2 {
+  font-family: 'Doto', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
+.parallax-content .tagline {
+  font-family: 'Doto', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* About section */
+#about h2 {
+  font-family: 'Doto', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-family: 'Doto', sans-serif;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Footer styles */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+  background-color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p,
+footer .social-media a {
+  font-family: 'Doto', sans-serif;
+  color: #333;
+}
+
+.social-media a {
+  margin: 0 10px;
 }
