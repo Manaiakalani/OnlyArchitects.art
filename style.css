@@ -1,13 +1,38 @@
+/* CSS Custom Properties */
+:root {
+  --font-primary: 'Doto', Arial, sans-serif;
+  --color-text: #333;
+  --color-text-light: #555;
+  --color-bg: #f7f5f2;
+  --color-bg-light: #e0e0e0;
+}
+
 /* Global body font */
 body {
-  font-family: 'Doto', Arial, sans-serif;
+  font-family: var(--font-primary);
   margin: 0;
-  background-color: #f7f5f2;
+  background-color: var(--color-bg);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-text);
+  color: white;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Header styles */
 header {
-  background-color: #e0e0e0;
+  background-color: var(--color-bg-light);
   padding: 20px;
   position: fixed; 
   width: 100%;
@@ -15,13 +40,13 @@ header {
 }
 
 .logo {
-  font-family: 'Doto', sans-serif;
+  font-family: var(--font-primary);
   font-size: 24px;
   font-weight: 700;
 }
 
 .list-inline-item .btn {
-  font-family: 'Doto', sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
 }
 
@@ -31,21 +56,19 @@ header {
 }
 
 .left-section h2 {
-  font-family: 'Doto', sans-serif;
   font-weight: 700;
-  color: #333;
+  color: var(--color-text);
 }
 
 .left-section p {
-  font-family: 'Doto', sans-serif;
   line-height: 1.6;
-  color: #555;
+  color: var(--color-text-light);
 }
 
 /* Right parallax image */
 .right-parallax {
-  background-image: url("https://images.unsplash.com/photo-1448836990373-efa7c2fba22f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); /* Aesthetic placeholder image */
-  background-attachment: fixed;
+  background-image: url("https://images.unsplash.com/photo-1448836990373-efa7c2fba22f?w=800&auto=format&fit=crop&q=80");
+  background-attachment: scroll; /* Default for mobile */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,9 +77,9 @@ header {
 
 /* Parallax section */
 .parallax {
-  background-image: url("https://images.unsplash.com/photo-1737069222401-afd3720775ae?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+  background-image: url("https://images.unsplash.com/photo-1737069222401-afd3720775ae?w=1600&auto=format&fit=crop&q=80"); 
   min-height: 400px; 
-  background-attachment: fixed;
+  background-attachment: scroll; /* Default for mobile */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -65,51 +88,75 @@ header {
   justify-content: center;
 }
 
+/* Enable parallax only on devices that support it well */
+@media (min-width: 768px) and (hover: hover) {
+  .parallax,
+  .right-parallax {
+    background-attachment: fixed;
+  }
+}
+
 .parallax-content {
   text-align: center;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Improve contrast */
 }
 
 .parallax-content h2 {
-  font-family: 'Doto', sans-serif;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .parallax-content .tagline {
-  font-family: 'Doto', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
 /* About section */
 #about h2 {
-  font-family: 'Doto', sans-serif;
-  color: #333;
+  color: var(--color-text);
   text-align: center;
   margin-bottom: 20px;
 }
 
 #about p {
-  font-family: 'Doto', sans-serif;
-  color: #555;
+  color: var(--color-text-light);
   line-height: 1.6;
   text-align: center;
 }
 
 /* Footer styles */
 footer {
-  background-color: #e0e0e0;
+  background-color: var(--color-bg-light);
   padding: 20px;
   text-align: center;
 }
 
 footer p,
 footer .social-media a {
-  font-family: 'Doto', sans-serif;
-  color: #333;
+  color: var(--color-text);
 }
 
 .social-media a {
   margin: 0 10px;
+  transition: opacity 0.2s ease;
+}
+
+.social-media a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .parallax-content h2 {
+    font-size: 2rem;
+  }
+  
+  .parallax-content .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .left-section {
+    padding: 20px;
+  }
 }
