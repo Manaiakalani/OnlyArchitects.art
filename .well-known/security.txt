@@ -1,0 +1,7 @@
+# Security Policy for onlyarchitects.art
+# Per RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: mailto:security@onlyarchitects.art
+Expires: 2027-03-21T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://onlyarchitects.art/.well-known/security.txt
