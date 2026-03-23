@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — OnlyArchitects</title>
+  <link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Doto', Arial, sans-serif;
+      background: #0a0a0a;
+      color: #f7f5f2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .code {
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 100;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.15;
+    }
+    .message {
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .sub {
+      font-size: clamp(14px, 1.2vw, 16px);
+      font-weight: 300;
+      color: #888580;
+      margin-bottom: 48px;
+    }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      border: 1px solid #888580;
+      border-radius: 999px;
+      font-family: 'Doto', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #f7f5f2;
+      text-decoration: none;
+      transition: background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                  border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                  transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .back:hover {
+      background: #f7f5f2;
+      color: #0a0a0a;
+      border-color: #f7f5f2;
+    }
+    .back:active { transform: scale(0.97); }
+    .arrow { transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+    .back:hover .arrow { transform: translateX(-4px); }
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1 class="message">This blueprint doesn't exist.</h1>
+  <p class="sub">The page you're looking for has been demolished or never built.</p>
+  <a href="/" class="back">
+    <span class="arrow" aria-hidden="true">&#8592;</span>
+    <span>Back to Home</span>
+  </a>
+</body>
+</html>
