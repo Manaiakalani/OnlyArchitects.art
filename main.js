@@ -3,17 +3,39 @@
 (function () {
   'use strict';
 
-  // Header scroll effect
+  // Header scroll effect + section color detection
   const header = document.getElementById('site-header');
+  const hero = document.getElementById('hero');
+  const connectSection = document.getElementById('connect');
+  const footer = document.getElementById('site-footer');
   let lastScroll = 0;
 
   function onScroll() {
-    const y = window.scrollY;
+    var y = window.scrollY;
+    var headerBottom = y + 80;
+
     if (y > 60) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+
+    // Detect if header is over a dark or light section
+    var heroBottom = hero.offsetTop + hero.offsetHeight;
+    var connectTop = connectSection.offsetTop;
+    var connectBottom = connectTop + connectSection.offsetHeight;
+    var footerTop = footer.offsetTop;
+
+    var overDark = (headerBottom < heroBottom) ||
+                   (headerBottom >= connectTop && headerBottom < connectBottom) ||
+                   (headerBottom >= footerTop);
+
+    if (overDark) {
+      header.classList.remove('light');
+    } else {
+      header.classList.add('light');
+    }
+
     lastScroll = y;
   }
 
@@ -43,6 +65,28 @@
     // Fallback: show everything
     reveals.forEach(function (el) {
       el.classList.add('visible');
+    });
+  }
+
+  // Mobile menu toggle
+  var menuToggle = document.querySelector('.menu-toggle');
+  var headerNav = document.querySelector('.header-nav');
+
+  if (menuToggle && headerNav) {
+    menuToggle.addEventListener('click', function () {
+      var expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      headerNav.classList.toggle('open');
+      document.body.style.overflow = !expanded ? 'hidden' : '';
+    });
+
+    // Close menu when a nav link is clicked
+    headerNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        headerNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
     });
   }
 
