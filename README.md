@@ -5,6 +5,8 @@ A community platform for architects to connect, share ideas, and build meaningfu
 ## 🌐 Live Site
 [https://onlyarchitects.art](https://onlyarchitects.art)
 
+![OnlyArchitects home](docs/screenshot.png)
+
 ## 🛠️ Tech Stack
 - HTML5 / CSS3
 - Bootstrap 5.3
