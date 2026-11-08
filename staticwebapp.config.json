@@ -9,6 +9,21 @@
   "mimeTypes": {
     ".json": "application/json"
   },
+  "routes": [
+    {
+      "route": "/.well-known/apple-app-site-association",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "route": "/apple-app-site-association",
+      "rewrite": "/.well-known/apple-app-site-association",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  ],
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html",

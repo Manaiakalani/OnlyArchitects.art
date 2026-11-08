@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "7V8RY77W24.art.onlyarchitects.app"
+        ],
+        "components": [
+          {
+            "/": "/b/*",
+            "comment": "Building share"
+          },
+          {
+            "/": "/p/*",
+            "comment": "Person share"
+          }
+        ]
+      }
+    ]
+  }
+}
