@@ -12,16 +12,11 @@
   "routes": [
     {
       "route": "/.well-known/apple-app-site-association",
-      "headers": {
-        "Content-Type": "application/json"
-      }
+      "rewrite": "/.well-known/apple-app-site-association.json"
     },
     {
       "route": "/apple-app-site-association",
-      "rewrite": "/.well-known/apple-app-site-association",
-      "headers": {
-        "Content-Type": "application/json"
-      }
+      "rewrite": "/.well-known/apple-app-site-association.json"
     }
   ],
   "responseOverrides": {
