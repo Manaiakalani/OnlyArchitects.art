@@ -116,7 +116,14 @@ const SCREENSHOTS_DIR = path.join(__dirname, 'test-screenshots');
 
   await test('All project images are self-hosted', async () => {
     const srcs = await page.$$eval('.project-image-link img', imgs => imgs.map(i => i.src));
-    const external = srcs.filter(s => s.includes('unsplash.com'));
+    const external = srcs.filter(s => {
+      try {
+        const hostname = new URL(s).hostname;
+        return hostname === 'unsplash.com' || hostname.endsWith('.unsplash.com');
+      } catch {
+        return false;
+      }
+    });
     assert.strictEqual(external.length, 0, `External images: ${external.join(', ')}`);
   });
 
